@@ -8,7 +8,7 @@ from .models import BlogPost
 
 def blog_post_detail_page(request, id):
     try:
-        obj = BlogPost.objects.get(id)
+        obj = BlogPost.objects.get(id=str(id))
     except BlogPost.DoesNotExist:
         raise Http404
     except ValueError:
